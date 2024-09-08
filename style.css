@@ -193,7 +193,7 @@ section{
     /* display: none; */
     position: absolute;
     top: 10%;
-    width: 786px;
+    max-width: 786px;
     background-color: #fff;
     left: 25%;
     z-index: 100;
@@ -237,5 +237,11 @@ section{
     }
     .year{
         margin-left: 0;
+    }
+}
+
+@media screen and (width:400px) {
+    .modal{
+        left: 10%;
     }
 }
