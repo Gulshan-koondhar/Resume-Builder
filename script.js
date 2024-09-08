@@ -2,7 +2,74 @@ var hide1 = document.querySelector(".hide1");
 var hide = document.querySelector(".hide");
 var edSkill = document.querySelector(".ed-skills");
 var projectList = document.querySelector(".project-list");
+var nameField = document.querySelector("#nameField");
+var nameT = document.querySelector("#nameT");
+var emailField = document.querySelector("#emailField");
+var emailT = document.querySelector("#emailT");
+var contactField = document.querySelector("#contactField");
+var contactT = document.querySelector("#contactT");
 var modal = document.querySelector(".modal");
+var jobTitle = document.querySelector("#jobTitle");
+var jobT = document.querySelector("#jobT");
+var objField = document.querySelector("#objField");
+var objT = document.querySelector("#objT");
+var weField = document.querySelector(".weField");
+var weT = document.querySelector("#weT");
+var skField = document.querySelector(".skField");
+var skillT = document.querySelector("#skillT");
+var langField = document.querySelector(".langField");
+var langT = document.querySelector("#langT");
+var proField = document.querySelector(".proField");
+var proT = document.querySelector("#proT");
+var editPage = function () {
+    if (modal)
+        modal.classList.add("active-1");
+    if (nameT) {
+        if (nameField) {
+            nameField.innerText = nameT.innerText;
+        }
+    }
+    if (emailT) {
+        if (emailField) {
+            emailField.innerText = emailT.innerText;
+        }
+    }
+    if (contactT) {
+        if (contactField) {
+            contactField.innerText = contactT.innerText;
+        }
+    }
+    if (jobT) {
+        if (jobTitle) {
+            jobTitle.innerText = jobT.innerText;
+        }
+    }
+    if (objT) {
+        if (objField) {
+            objField.innerText = objT.innerText;
+        }
+    }
+    if (weT) {
+        if (weField) {
+            weField.innerText = weT.innerText;
+        }
+    }
+    if (skillT) {
+        if (skField) {
+            skField.innerText = skillT.innerText;
+        }
+    }
+    if (langT) {
+        if (langField) {
+            langField.innerText = langT.innerText;
+        }
+    }
+    if (proT) {
+        if (proField) {
+            proField.innerText = proT.innerText;
+        }
+    }
+};
 var createResume = function () {
     if (modal)
         modal.classList.add("active-1");
@@ -16,64 +83,46 @@ hide === null || hide === void 0 ? void 0 : hide.addEventListener("click", funct
     edSkill === null || edSkill === void 0 ? void 0 : edSkill.classList.toggle("active");
 });
 var generateCV = function () {
-    var nameField = document.querySelector("#nameField");
-    var nameT = document.querySelector("#nameT");
     if (nameField) {
         if (nameT) {
             nameT.innerText = nameField.value;
         }
     }
-    var emailField = document.querySelector("#emailField");
-    var emailT = document.querySelector("#emailT");
     if (emailField) {
         if (emailT) {
             emailT.innerText = emailField.value;
         }
     }
-    var contactField = document.querySelector("#contactField");
-    var contactT = document.querySelector("#contactT");
     if (contactField) {
         if (contactT) {
             contactT.innerText = contactField.value;
         }
     }
-    var jobTitle = document.querySelector("#jobTitle");
-    var jobT = document.querySelector("#jobT");
     if (jobTitle) {
         if (jobT) {
             jobT.innerText = jobTitle.value;
         }
     }
-    var objField = document.querySelector("#objField");
-    var objT = document.querySelector("#objT");
     if (objField) {
         if (objT) {
             objT.innerText = objField.value;
         }
     }
-    var weField = document.querySelector(".weField");
-    var weT = document.querySelector("#weT");
     if (weField) {
         if (weT) {
             weT.innerText = weField.value;
         }
     }
-    var skField = document.querySelector(".skField");
-    var skillT = document.querySelector("#skillT");
     if (skField) {
         if (skillT) {
             skillT.innerText = skField.value;
         }
     }
-    var langField = document.querySelector(".langField");
-    var langT = document.querySelector("#langT");
     if (langField) {
         if (langT) {
             langT.innerText = langField.value;
         }
     }
-    var proField = document.querySelector(".proField");
-    var proT = document.querySelector("#proT");
     if (proField) {
         if (proT) {
             proT.innerText = proField.value;
