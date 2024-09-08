@@ -123,26 +123,44 @@
         <button onclick="closeModal()" class="close">X</button>
         <form action="" class="resume-form">
           <label for="nameField">Full Name:</label>
-          <input type="text" id="nameField" />
+          <input type="text" id="nameField" required />
           <label for="jobTitle">Job Title:</label>
-          <input type="text" id="jobTitle" />
+          <input type="text" id="jobTitle" required />
           <label for="emailField">Email:</label>
-          <input type="text" id="emailField" />
+          <input type="text" id="emailField" required />
           <label for="contactField">Mobile #:</label>
-          <input type="number" id="contactField" />
+          <input type="number" id="contactField" required />
           <label for="objField">Objective</label>
-          <textarea name="Objective" id="objField" rows="5" class="objField">
+          <textarea
+            name="Objective"
+            id="objField"
+            rows="5"
+            class="objField"
+            required
+          >
 Enter your Objective</textarea
           >
           <div class="ed">
             <label for="edField">Education</label>
-            <textarea name="Education" id="edField" rows="3" class="weField">
+            <textarea
+              name="Education"
+              id="edField"
+              rows="3"
+              class="weField"
+              required
+            >
 Your Education</textarea
             >
           </div>
           <div class="ed2">
             <label for="skillField">Skills</label>
-            <textarea name="Education" id="skillField" rows="3" class="skField">
+            <textarea
+              name="Education"
+              id="skillField"
+              rows="3"
+              class="skField"
+              required
+            >
 Your Skills</textarea
             >
           </div>
@@ -153,13 +171,20 @@ Your Skills</textarea
               id="langField"
               rows="3"
               class="langField"
+              required
             >
 languages</textarea
             >
           </div>
           <div class="ed1">
             <label for="proField">Projects</label>
-            <textarea name="Projects" id="proField" rows="3" class="proField">
+            <textarea
+              name="Projects"
+              id="proField"
+              rows="3"
+              class="proField"
+              required
+            >
 Your Projects</textarea
             >
           </div>
