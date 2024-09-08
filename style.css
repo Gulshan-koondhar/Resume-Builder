@@ -1,0 +1,201 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+a{
+    text-decoration: none;
+    color: #fff;
+}
+
+section{
+    margin-top: 20px;
+}
+.wrapper{
+    max-width: 1200px;
+    height: 100%;
+    background-color: black;
+    color: white;
+    margin: auto;
+    border-radius: 20px;
+}
+
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    gap: 0.7rem;
+}
+
+.profile img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+.objective, .education, .Projects{
+    padding: 20px;
+    position: relative;
+}
+.objective h1,.education h1, .Projects h1{
+    margin-bottom: 10px;
+}
+.objective h1::after, .education h1::after, .Projects h1::after{
+    content: "";
+    position: absolute;
+    width: 100px;
+    background: #fff;
+    height: 5px;
+    border-radius: 10px;
+    left: 20px;
+    top: 45px;
+    z-index: 1;
+}
+.hide{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 50%;
+    color: #fff;
+    padding: 5px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 20px;
+    font-weight: 700;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+}
+.ed-skills{
+    display: flex;
+    width: 100%;
+    padding: 20px;
+}
+.Academics{
+    width: 50%;
+}
+.item-list{
+    padding-top: 10px;
+}
+.item-list li{
+    padding-bottom: 10px;
+}
+.year{
+    margin-left: 20px ;
+    font-size: 15px;
+}
+.item-list h3{
+    margin-bottom: 5px;
+}
+.skill{
+    position: relative;
+    width: 50%;
+}
+.skill h4{
+    padding-top: 10px;
+}
+.w-design{
+    margin-top: 10px;
+}
+.wd::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 10px;
+    background: #fff;
+    border-radius: 20px;
+    top: 60px;
+    left: 0;
+}
+.percentage::after{
+    content: "";
+    position: absolute;
+    width: 70%;
+    height: 10px;
+    background: #6e6666;
+    border-radius: 20px;
+    top: 60px;
+    left: 0;
+}
+.w-design::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 10px;
+    background: #fff;
+    border-radius: 20px;
+    top: 100px;
+    left: 0;
+}
+.percent::after{
+    content: "";
+    position: absolute;
+    width: 60%;
+    height: 10px;
+    background: #6e6666;
+    border-radius: 20px;
+    top: 100px;
+    left: 0;
+}
+.language{
+    margin-top: 50px;
+}
+.lang-list{
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    /* align-items: center; */
+    justify-content: center;
+    gap: 20px;
+}
+.project-list {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+.project-list li{
+    width: 300px;
+    height: 300px;
+    border: 1px solid white;
+    margin-top: 20px;
+    border-radius: 20px;
+    padding: 10px;
+}
+.generate{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.generate button{
+    padding: 10px;
+    background-color: #6e6666;
+    color: #fff;
+    border-radius: 20px;
+    font-size: 20px;
+}
+
+@media screen and (max-width: 786px){
+    .ed-skills {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .Academics {
+        width: 100%;
+    }
+    .skill{
+        width: 100%;
+    }
+    .item-list h3 {
+        margin-bottom: 5px;
+        font-size: 16px;
+    }
+    .year{
+        margin-left: 0;
+    }
+}
