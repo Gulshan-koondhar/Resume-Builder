@@ -17,14 +17,12 @@
     <section>
       <div class="wrapper">
         <div class="header">
-          <div class="profile">
-            <img src="./assest/profile.jpeg" alt="" />
-          </div>
-          <h1>Gulshan Mustafa Koondhar</h1>
+          <h1 id="nameT">Gulshan Mustafa Koondhar</h1>
+          <h2 id="jobT">Front End Developer</h2>
           <div>
             <p>
-              <span>gulshan.koondhar@outlook.com</span> |
-              <span>+923113969283</span>
+              <span id="emailT">gulshan.koondhar@outlook.com</span> |
+              <span id="contactT">+923113969283</span>
             </p>
           </div>
         </div>
@@ -34,7 +32,7 @@
       <div class="wrapper">
         <div class="objective">
           <h1>Objective</h1>
-          <p>
+          <p id="objT">
             Front End Developer with internship experience at Cod Soft,
             specializing in React JS, Tailwind CSS, Next JS, JavaScript, HTML,
             and CSS, and proven ability to create responsive and user-friendly
@@ -56,23 +54,7 @@
         <div class="ed-skills">
           <div class="Academics">
             <h1>Education</h1>
-            <ul class="item-list">
-              <li>
-                <h3>
-                  B.E Telecommunication Enginnering
-                  <span class="year">2016 - 2021</span>
-                </h3>
-
-                <p>Mehran University of Engineering and Technology Jamshoro</p>
-              </li>
-              <li>
-                <h3>
-                  B.E Telecommunication Enginnering
-                  <span class="year">2016 - 2021</span>
-                </h3>
-
-                <p>Mehran University of Engineering and Technology Jamshoro</p>
-              </li>
+            <ul class="item-list" id="weT">
               <li>
                 <h3>
                   B.E Telecommunication Enginnering
@@ -85,17 +67,12 @@
           </div>
           <div class="skill">
             <h1>Skills</h1>
-            <div>
+            <div id="skillT">
               <h4 class="wd">Web Development</h4>
-              <div class="percentage"></div>
-            </div>
-            <div>
-              <h4 class="w-design">Web Design</h4>
-              <div class="percent"></div>
             </div>
             <div class="language">
               <h1>Language</h1>
-              <ul class="lang-list">
+              <ul class="lang-list" id="langT">
                 <li>HTML</li>
                 <li>CSS</li>
                 <li>JavaScript</li>
@@ -113,25 +90,7 @@
         <div class="Projects">
           <button class="hide1">+</button>
           <h1>Projects</h1>
-          <ul class="project-list">
-            <li>
-              <a href="">
-                <h2 class="title">Project 1</h2>
-                <p class="desc">Description</p>
-              </a>
-            </li>
-            <li>
-              <a href="">
-                <h2 class="title">Project 1</h2>
-                <p class="desc">Description</p>
-              </a>
-            </li>
-            <li>
-              <a href="">
-                <h2 class="title">Project 1</h2>
-                <p class="desc">Description</p>
-              </a>
-            </li>
+          <ul class="project-list" id="proT">
             <li>
               <a href="">
                 <h2 class="title">Project 1</h2>
@@ -154,9 +113,57 @@
         </div>
       </div>
     </section>
-    <section>
-      <div class="generate">
-        <button>Generate Your Resume</button>
+    <section id="modal">
+      <div class="modal">
+        <h1>Resume Generator</h1>
+        <form action="" class="resume-form">
+          <label for="nameField">Full Name:</label>
+          <input type="text" id="nameField" />
+          <label for="jobTitle">Job Title:</label>
+          <input type="text" id="jobTitle" />
+          <label for="emailField">Email:</label>
+          <input type="text" id="emailField" />
+          <label for="contactField">Mobile #:</label>
+          <input type="number" id="contactField" />
+          <label for="objField">Objective</label>
+          <textarea name="Objective" id="objField" rows="5" class="objField">
+Enter your Objective</textarea
+          >
+          <div class="ed">
+            <label for="edField">Education</label>
+            <textarea name="Education" id="edField" rows="3" class="weField">
+Your Education</textarea
+            >
+          </div>
+          <div class="ed2">
+            <label for="skillField">Skills</label>
+            <textarea name="Education" id="skillField" rows="3" class="skField">
+Your Skills</textarea
+            >
+          </div>
+          <div class="ed3">
+            <label for="langField">languages</label>
+            <textarea
+              name="Education"
+              id="langField"
+              rows="3"
+              class="langField"
+            >
+languages</textarea
+            >
+          </div>
+          <div class="ed1">
+            <label for="proField">Projects</label>
+            <textarea name="Projects" id="proField" rows="3" class="proField">
+Your Projects</textarea
+            >
+          </div>
+        </form>
+        <div class="generate">
+          <a href="#">
+            <button onclick="generateCV()">Generate Your Resume</button>
+          </a>
+        </div>
       </div>
     </section>
     <script src="script.js"></script>

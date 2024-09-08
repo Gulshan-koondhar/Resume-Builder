@@ -171,18 +171,54 @@ section{
     border-radius: 20px;
     padding: 10px;
 }
+.ed, .ed1, .ed2, .ed3{
+    display: flex;
+    flex-direction: column;
+}
 .generate{
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .generate button{
+    margin-top: 20px;
     padding: 10px;
     background-color: #6e6666;
     color: #fff;
     border-radius: 20px;
     font-size: 20px;
+    cursor: pointer;
 }
+.modal{
+    /* display: none; */
+    position: absolute;
+    top: 10%;
+    width: 786px;
+    background-color: #fff;
+    left: 25%;
+    z-index: 100;
+    border-radius: 20px;
+    padding: 10px;
+}
+.modal h1{
+    text-align: center;
+    margin-bottom: 10px;
+}
+.resume-form{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+
+
+
+
+
+
+
+
+
 
 @media screen and (max-width: 786px){
     .ed-skills {
