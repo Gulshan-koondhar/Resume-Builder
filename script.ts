@@ -8,6 +8,9 @@ const createResume: ()=>void = ()=>{
 if(modal)
 modal.classList.add("active-1")
 
+if(generatedurl)
+    generatedurl.innerText= ""
+
 }
 
 
@@ -92,4 +95,17 @@ const generateCV:()=>void=()=>{
 
 const printCV:()=> void= ()=>{
     window.print()
+    
+if(generatedurl)
+    generatedurl.innerText= ""
+}
+const generatedurl:HTMLElement | null = document.querySelector(".url")
+function generateShareableURL(): string {
+    const name: string | undefined = document.getElementById('nameT')?.innerText;
+    const url: URL = new URL(window.location.href);
+    url.searchParams.set('name', encodeURIComponent(name || ''));
+    if(generatedurl)
+    generatedurl.innerHTML = url.toString() 
+
+    return url.toString();
 }

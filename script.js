@@ -6,6 +6,8 @@ var modal = document.querySelector(".modal");
 var createResume = function () {
     if (modal)
         modal.classList.add("active-1");
+    if (generatedurl)
+        generatedurl.innerText = "";
 };
 hide1 === null || hide1 === void 0 ? void 0 : hide1.addEventListener("click", function (e) {
     projectList === null || projectList === void 0 ? void 0 : projectList.classList.toggle("active");
@@ -81,4 +83,16 @@ var generateCV = function () {
 };
 var printCV = function () {
     window.print();
+    if (generatedurl)
+        generatedurl.innerText = "";
 };
+var generatedurl = document.querySelector(".url");
+function generateShareableURL() {
+    var _a;
+    var name = (_a = document.getElementById('nameT')) === null || _a === void 0 ? void 0 : _a.innerText;
+    var url = new URL(window.location.href);
+    url.searchParams.set('name', encodeURIComponent(name || ''));
+    if (generatedurl)
+        generatedurl.innerHTML = url.toString();
+    return url.toString();
+}

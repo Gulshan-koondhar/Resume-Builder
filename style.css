@@ -217,6 +217,10 @@ section{
 .active-1{
     display: block;
 }
+.url{
+    display: flex;
+    justify-content: center;
+}
 
 
 
