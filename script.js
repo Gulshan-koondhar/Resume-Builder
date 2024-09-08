@@ -26,7 +26,8 @@ var editPage = function () {
         modal.classList.add("active-1");
     if (nameT) {
         if (nameField) {
-            nameField.innerText = nameT.innerText;
+            nameField.innerText = nameT.innerHTML;
+            console.log(nameField.innerHTML);
         }
     }
     if (emailT) {
