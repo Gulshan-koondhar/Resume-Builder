@@ -2,7 +2,11 @@ var hide1 = document.querySelector(".hide1");
 var hide = document.querySelector(".hide");
 var edSkill = document.querySelector(".ed-skills");
 var projectList = document.querySelector(".project-list");
-var modal = document.querySelector("#modal");
+var modal = document.querySelector(".modal");
+var createResume = function () {
+    if (modal)
+        modal.classList.add("active-1");
+};
 hide1 === null || hide1 === void 0 ? void 0 : hide1.addEventListener("click", function (e) {
     projectList === null || projectList === void 0 ? void 0 : projectList.classList.toggle("active");
 });
@@ -73,7 +77,8 @@ var generateCV = function () {
             proT.innerText = proField.value;
         }
     }
-    if (modal) {
-        modal.style.display = "none";
-    }
+    modal === null || modal === void 0 ? void 0 : modal.classList.remove("active-1");
+};
+var printCV = function () {
+    window.print();
 };

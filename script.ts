@@ -2,8 +2,15 @@ const hide1: HTMLElement | null = document.querySelector(".hide1");
 const hide: HTMLElement | null = document.querySelector(".hide");
 const edSkill: HTMLElement | null = document.querySelector(".ed-skills");
 const projectList: HTMLElement | null = document.querySelector(".project-list");
+const modal = document.querySelector(".modal")
 
-const modal:HTMLElement | null = document.querySelector("#modal")
+const createResume: ()=>void = ()=>{
+if(modal)
+modal.classList.add("active-1")
+
+}
+
+
 
 hide1?.addEventListener("click", (e: MouseEvent): void => {
     projectList?.classList.toggle("active");
@@ -78,10 +85,11 @@ const generateCV:()=>void=()=>{
                 proT.innerText = proField.value;
             }
         }
-
         
-        if(modal){
+        modal?.classList.remove("active-1")
+        
+}
 
-            modal.style.display = "none"
-        }
+const printCV:()=> void= ()=>{
+    window.print()
 }
