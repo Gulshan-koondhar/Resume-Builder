@@ -220,7 +220,11 @@ section{
 
 
 
-
+.button{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
 
 
 @media screen and (max-width: 786px){
