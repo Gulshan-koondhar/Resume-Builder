@@ -146,3 +146,8 @@ function generateShareableURL() {
         generatedurl.innerHTML = url.toString();
     return url.toString();
 }
+var closeModal = function () {
+    if (modal) {
+        modal.classList.remove("active-1");
+    }
+};

@@ -85,7 +85,6 @@ if(generatedurl)
 }
 
 
-
 hide1?.addEventListener("click", (e: MouseEvent): void => {
     projectList?.classList.toggle("active");
 });
@@ -168,4 +167,10 @@ function generateShareableURL(): string {
     generatedurl.innerHTML = url.toString() 
 
     return url.toString();
+}
+
+const closeModal : ()=>void = ()=>{
+    if(modal){
+        modal.classList.remove("active-1")
+    }
 }
