@@ -53,7 +53,7 @@ section{
     top: 45px;
     z-index: 1;
 }
-.hide{
+.hide, .hide1{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -71,8 +71,9 @@ section{
     height: 35px;
     cursor: pointer;
 }
+
 .ed-skills{
-    display: flex;
+    display: none;
     width: 100%;
     padding: 20px;
 }
@@ -154,10 +155,13 @@ section{
     gap: 20px;
 }
 .project-list {
-    display: flex;
+    display: none;
     justify-content: space-around;
     margin-top: 20px;
     flex-wrap: wrap;
+}
+.active{
+    display: flex;
 }
 .project-list li{
     width: 300px;
