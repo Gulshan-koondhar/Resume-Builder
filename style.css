@@ -229,4 +229,10 @@ section{
     .button{
         visibility: hidden;
     }
+    .project-list{
+        display: block;
+    }
+    .ed-skills{
+        display: block;
+    }
 }
