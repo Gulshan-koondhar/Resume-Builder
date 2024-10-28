@@ -36,24 +36,31 @@ saveBtn === null || saveBtn === void 0 ? void 0 : saveBtn.addEventListener("clic
     resume.style.display = "block";
     downBtn.style.display = "flex";
     if (nameField) {
+        nameField.innerHTML = "";
         nameField.innerHTML = fullName.value;
     }
     if (emailField) {
+        emailField.innerHTML = "";
         emailField.innerHTML = email.value;
     }
     if (objField) {
+        objField.innerHTML = "";
         objField.innerHTML = objective.value;
     }
     if (mobileField) {
+        mobileField.innerHTML = "";
         mobileField.innerHTML = mobile.value;
     }
     if (linkedInField) {
+        linkedInField.innerHTML = "";
         linkedInField.innerHTML = linkedIn.value;
     }
     if (githubField) {
+        githubField.innerHTML = "";
         githubField.innerHTML = gitHub.value;
     }
     if (educationField) {
+        educationField.innerHTML = "";
         var allEduItem = document.querySelectorAll(".education-item");
         allEduItem.forEach(function (eduItem) {
             var lieduField = document.createElement("li");
@@ -79,6 +86,7 @@ saveBtn === null || saveBtn === void 0 ? void 0 : saveBtn.addEventListener("clic
         });
     }
     if (projectField) {
+        projectField.innerHTML = "";
         var allprojectItems = document.querySelectorAll(".project-item");
         allprojectItems.forEach(function (projectItem) {
             var liproField = document.createElement("li");
@@ -98,6 +106,7 @@ saveBtn === null || saveBtn === void 0 ? void 0 : saveBtn.addEventListener("clic
         });
     }
     if (skills) {
+        skills.innerHTML = "";
         var allSkills = document.querySelectorAll(".skill");
         allSkills.forEach(function (skillField) {
             var liskillField = document.createElement("li");

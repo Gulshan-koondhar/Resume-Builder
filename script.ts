@@ -1,4 +1,3 @@
-
 const steps = document.querySelectorAll(".form-step");
 const nextButtons = document.querySelectorAll(".next-btn");
 const prevButtons = document.querySelectorAll(".prev-btn");
@@ -41,31 +40,38 @@ saveBtn?.addEventListener("click", ()=>{
 
     
     if(nameField){
+        nameField.innerHTML = ""
         nameField.innerHTML = fullName.value
     }
     if(emailField){
+        emailField.innerHTML = ""
         emailField.innerHTML = email.value
     }
     if(objField){
+        objField.innerHTML = ""
         objField.innerHTML = objective.value
     }
     if(mobileField){
+        mobileField.innerHTML = ""
         mobileField.innerHTML = mobile.value
     }
     if(linkedInField){
+        linkedInField.innerHTML = ""
         linkedInField.innerHTML = linkedIn.value
     }
     if(githubField){
+        githubField.innerHTML = ""
         githubField.innerHTML = gitHub.value
     }
     if(educationField){
+        educationField.innerHTML = ""
         const allEduItem = document.querySelectorAll(".education-item")
         allEduItem.forEach(eduItem =>{
             const lieduField = document.createElement("li")
             const h2eduField = document.createElement("h3")
             const degree = eduItem.querySelector(".degree") as HTMLInputElement
-const institution = eduItem.querySelector(".institution") as HTMLInputElement
-const graduation = eduItem.querySelector(".grad-year") as HTMLInputElement
+            const institution = eduItem.querySelector(".institution") as HTMLInputElement
+            const graduation = eduItem.querySelector(".grad-year") as HTMLInputElement
             if(h2eduField && degree){
                 h2eduField.textContent = degree.value
             }
@@ -84,6 +90,7 @@ const graduation = eduItem.querySelector(".grad-year") as HTMLInputElement
         })
     }
     if(projectField){
+        projectField.innerHTML = ""
         const allprojectItems = document.querySelectorAll(".project-item")
         allprojectItems.forEach(projectItem=>{
             const liproField = document.createElement("li")
@@ -106,6 +113,7 @@ const graduation = eduItem.querySelector(".grad-year") as HTMLInputElement
     }
     
     if(skills){
+        skills.innerHTML = ""
         const allSkills = document.querySelectorAll(".skill") as NodeListOf<HTMLInputElement>;
     
     allSkills.forEach(skillField => {
