@@ -2,221 +2,283 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow-x: hidden;
+    list-style: none;
+    
 }
 a{
     text-decoration: none;
     color: #fff;
 }
+header{
+    display: flex;
+    background-color: #dddada;
+    padding: 10px;
+    border-radius: 20px;
+    margin: 10px;
+
+}
+.logo{
+    font-size: 20px;
+    font-family: cursive;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+}
 
 section{
     margin-top: 20px;
 }
-.wrapper{
-    max-width: 1200px;
-    height: 100%;
-    background-color: black;
-    color: white;
-    margin: auto;
+.hero{
+    background-color: rgb(249, 250, 255);
+    margin: 10px;
     border-radius: 20px;
+    padding: 10px;
 }
-
-.header{
+.banner{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    padding: 20px;
-    gap: 0.7rem;
-}
-
-.profile img{
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-}
-.objective, .education, .Projects{
-    padding: 20px;
-    position: relative;
-}
-.objective h1,.education h1, .Projects h1{
-    margin-bottom: 10px;
-}
-.objective h1::after, .education h1::after, .Projects h1::after{
-    content: "";
-    position: absolute;
-    width: 100px;
-    background: #fff;
-    height: 5px;
-    border-radius: 10px;
-    left: 20px;
-    top: 45px;
-    z-index: 1;
-}
-.hide, .hide1{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: transparent;
-    border: 1px solid white;
-    border-radius: 50%;
-    color: #fff;
-    padding: 5px;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 20px;
-    font-weight: 700;
-    width: 35px;
-    height: 35px;
-    cursor: pointer;
-}
-
-.ed-skills{
-    display: none;
-    width: 100%;
-    padding: 20px;
-}
-.Academics{
-    width: 50%;
-}
-
-.item-list li{
-    padding-bottom: 10px;
-}
-.year{
-    margin-left: 20px ;
-    font-size: 15px;
-}
-.item-list h3{
-    margin-bottom: 5px;
-}
-.skill{
-    position: relative;
-    width: 50%;
-}
-.skill h4{
-    padding-top: 10px;
-}
-
-.language{
-    margin-top: 50px;
-}
-.lang-list{
-    margin-top: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    /* align-items: center; */
-    justify-content: center;
+    padding:10px ;
     gap: 20px;
 }
-.project-list {
-    display: none;
-    justify-content: space-around;
-    margin-top: 20px;
-    flex-wrap: wrap;
-}
-
-.project-list li{
-    width: 300px;
-    height: 300px;
-    border: 1px solid white;
-    margin-top: 20px;
-    border-radius: 20px;
-    padding: 10px;
-}
-.ed, .ed1, .ed2, .ed3{
+.content{
+    width: 50%;
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
+    gap: 15px;
 }
-.generate{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.subheading{
+    color: rgb(49, 49, 167);
+    font-size: 25px;
 }
-.generate button{
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #6e6666;
-    color: #fff;
-    border-radius: 20px;
+.mainheading{
+    font-size: 30px;
+    font-weight: 800;
+}
+.para{
     font-size: 20px;
+    width: 600px;
+}
+.btn{
+    width: 20%;
+    background-color: orange;
+    outline: none;
+    padding: 10px ;
+    border-radius: 20px;
+    border: none;
+    font-size: 16px;
     cursor: pointer;
 }
-
-.modal{
-    display: none;
-    position: absolute;
-    top: 10%;
-    max-width: 786px;
-    background-color: #fff;
-    left: 25%;
-    z-index: 100;
-    border-radius: 20px;
-    padding: 10px;
+.steps{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    padding: 50px;
+    gap: 16px;
 }
-.modal h1{
+.subcontent{
+    margin-top: 20px;
+}
+.subcontent h1{
+    margin-bottom: 10px;
+}
+.subcontent p{
+    font-size: 20px;
+}
+.secondLastfooter{
+    background-color: rgb(0, 0, 255);
+    padding: 70px 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.secondLastfooter h1{
+    font-size: 50px;
+    text-align: center;
+}
+.pro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.btn-second{
+    width: 30%;
+}
+footer{
+    background-color: #dddada;
+    padding: 20px;
+    margin-top: 10px;
+    
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+}
+.socials{
+    display: flex;
+    gap: 30px;
+}
+.form-container {
+    width: 90%;
+    margin: 40px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button.prev-btn {
+    background-color: #6c757d;
+}
+
+button.prev-btn:hover {
+    background-color: #5a6268;
+}
+
+button#add-education, button#add-skill, button#add-project {
+    margin-top: 10px;
+    background-color: #28a745;
+}
+
+button#add-education:hover, button#add-skill:hover, button#add-project:hover {
+    background-color: #218838;
+}
+
+.form-step {
+    display: none;
+}
+
+.form-step.active {
+    display: block;
+}
+
+.education-item, .project-item {
+    margin-bottom: 20px;
+}
+.contactF{
     text-align: center;
     margin-bottom: 10px;
 }
-.resume-form{
+.nameField{
+    margin-bottom: 10px;
+}
+.objF{
+    margin: 20px 0;
+}
+
+.objField, .proField, .eduField, .skillField{
+    margin-bottom: 10px;
+}
+.objF p{
+    margin-top: 10px;
+}
+.proField{
     display: flex;
-    justify-content: flex-start;
     flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
 }
-
-
-.active{
+.eduField{
     display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
 }
-
-.active-1{
-    display: block;
-}
-.url{
-    display: flex;
-    justify-content: center;
-}
-
-.close{
-    width: 30px;
-    height: 30px;
-    position: absolute;
-    top: 30px;
-    right: 5px;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-.button{
+.skillField{
     display: flex;
     gap: 10px;
-    justify-content: center;
     flex-wrap: wrap;
 }
-
-
-@media screen and (max-width: 786px){
-    .ed-skills {
-        flex-direction: column;
-        gap: 20px;
-    }
-    .Academics {
-        width: 100%;
-    }
-    .skill{
-        width: 100%;
-    }
-    .item-list h3 {
-        margin-bottom: 5px;
-        font-size: 16px;
-    }
-    .year{
-        margin-left: 0;
-    }
+.down-btn{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    display: none;
+}
+.resume{
+    display: none;
 }
 
-@media screen and (max-width:400px) {
+@media screen and (max-width: 786px){
+    .banner{
+        flex-direction: column;
+    }
+    .btn{
+        width: 40%;
+    }
+    .content{
+        width: 100%;
+    }
+    .para{
+        width: 100%;
+    }
+    .steps{
+        flex-direction: column;
+    }
+    .secondLastfooter h1{
+        font-size: 20px;
+    }
+    .secondLastfooter img{
+        width: 150px;
+    }
+    .btn-second{
+        width: 75%;
+    }
+    .form-container{
+        width: 90%;
+    }
+    
+}
+
+@media (min-width: 320px)  and (max-width:500px ) {
+    .image img{
+        width: 300px;
+    }
+    .steps{
+        padding: 10px;
+    }
+    
+    .secondLastfooter{
+        flex-direction: column;
+    }
+    footer{
+        flex-direction: column;
+        text-align: center;
+        font-size: 15px;
+    }
     .modal{
         left: 10%;
         right: 10%;
@@ -224,13 +286,10 @@ section{
 }
 
 @media print {
-    .button{
-        visibility: hidden;
+    .down-btn{
+        display: none;
     }
-    .project-list{
-        display: block;
-    }
-    .ed-skills{
-        display: block;
+    header{
+        display: none;
     }
 }

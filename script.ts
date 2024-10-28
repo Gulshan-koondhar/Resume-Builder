@@ -1,176 +1,206 @@
-const hide1: HTMLElement | null = document.querySelector(".hide1");
-const hide: HTMLElement | null = document.querySelector(".hide");
-const edSkill: HTMLElement | null = document.querySelector(".ed-skills");
-const projectList: HTMLElement | null = document.querySelector(".project-list");
-const nameField: HTMLInputElement | null = document.querySelector("#nameField");
-const nameT :HTMLElement | null =document.querySelector("#nameT")
-const emailField: HTMLInputElement | null = document.querySelector("#emailField");
-const emailT :HTMLElement | null =document.querySelector("#emailT")
-const contactField: HTMLInputElement | null = document.querySelector("#contactField");
-const contactT :HTMLElement | null =document.querySelector("#contactT")
-const modal = document.querySelector(".modal")
-const jobTitle: HTMLInputElement | null = document.querySelector("#jobTitle");
-const jobT :HTMLElement | null =document.querySelector("#jobT")
-const objField: HTMLInputElement | null = document.querySelector("#objField");
-const objT :HTMLElement | null =document.querySelector("#objT")
-const weField: HTMLInputElement | null = document.querySelector(".weField");
-const weT :HTMLElement | null =document.querySelector("#weT")
-const skField: HTMLInputElement | null = document.querySelector(".skField");
-const skillT :HTMLElement | null =document.querySelector("#skillT")
-const langField: HTMLInputElement | null = document.querySelector(".langField");
-const langT :HTMLElement | null =document.querySelector("#langT")
 
-const proField: HTMLInputElement | null = document.querySelector(".proField");
-const proT :HTMLElement | null =document.querySelector("#proT")
-
-
-const editPage:()=>void= ()=>{
-    if(modal)
-        modal.classList.add("active-1")
-    if(nameT){
-        if(nameField){
-            nameField.innerText = nameT.innerHTML
-            console.log(nameField.innerHTML)
-        }
-    }
-    if(emailT){
-        if(emailField){
-            emailField.innerText = emailT.innerText
-        }
-    }
-    if(contactT){
-        if(contactField){
-            contactField.innerText = contactT.innerText
-        }
-    }
-    if(jobT){
-        if(jobTitle){
-            jobTitle.innerText = jobT.innerText
-        }
-    }
-    if(objT){
-        if(objField){
-            objField.innerText = objT.innerText
-        }
-    }
-    if(weT){
-        if(weField){
-            weField.innerText = weT.innerText
-        }
-    }
-    if(skillT){
-        if(skField){
-            skField.innerText = skillT.innerText
-        }
-    }
-    if(langT){
-        if(langField){
-            langField.innerText = langT.innerText
-        }
-    }
-    if(proT){
-        if(proField){
-            proField.innerText = proT.innerText
-        }
-    }
-}
-
-const createResume: ()=>void = ()=>{
-if(modal)
-modal.classList.add("active-1")
-
-if(generatedurl)
-    generatedurl.innerText= ""
-
-}
+const steps = document.querySelectorAll(".form-step");
+const nextButtons = document.querySelectorAll(".next-btn");
+const prevButtons = document.querySelectorAll(".prev-btn");
+const addEducationButton = document.getElementById("add-education") as HTMLButtonElement;
+const addSkillButton = document.getElementById("add-skill") as HTMLButtonElement;
+const addProjectButton = document.getElementById("add-project") as HTMLButtonElement;
+const projectField = document.querySelector(".proField") as HTMLDivElement
+const educationField = document.querySelector(".eduField")
+const skills = document.querySelector(".skillField")
+const skill = document.querySelector(".skill") as HTMLInputElement
+const saveBtn = document.querySelector(".save")
+const fullName = document.querySelector("#name") as HTMLInputElement
+const nameField = document.querySelector(".nameField")
+const email = document.querySelector("#email") as HTMLInputElement
+const emailField = document.querySelector(".emailField")
+const objective = document.querySelector("#objective") as HTMLInputElement
+const objField = document.querySelector(".objField")
+const mobile = document.querySelector("#mobile") as HTMLInputElement
+const linkedIn = document.querySelector("#linkedIn") as HTMLInputElement
+const gitHub = document.querySelector("#github") as HTMLInputElement
+const mobileField = document.querySelector(".phone")
+const linkedInField = document.querySelector(".linkedIn")
+const githubField = document.querySelector(".github")
+const download = document.querySelector(".download")
+const resumeForm = document.querySelector(".resume-form") as HTMLDivElement
+const resume = document.querySelector(".resume") as HTMLDivElement
+const downBtn = document.querySelector(".down-btn") as HTMLDivElement
+const edit = document.querySelector(".edit") 
 
 
-hide1?.addEventListener("click", (e: MouseEvent): void => {
-    projectList?.classList.toggle("active");
-});
+edit?.addEventListener("click", ()=>{
+    resumeForm.style.display = "block"
+    resume.style.display = "none"
+    downBtn.style.display = "none"
+})
+saveBtn?.addEventListener("click", ()=>{
+    resumeForm.style.display = "none"
+    resume.style.display = "block"
+    downBtn.style.display = "flex"
 
-hide?.addEventListener("click", (e: MouseEvent): void => {
-    edSkill?.classList.toggle("active");
-});
-
-
-const generateCV:()=>void=()=>{
-
-        if (nameField) {
-            if(nameT){
-                nameT.innerText = nameField.value;
-            }
-        }
-
-        if (emailField) {
-            if(emailT){
-                emailT.innerText = emailField.value;
-            }
-        }
-
-        if (contactField) {
-            if(contactT){
-                contactT.innerText = contactField.value;
-            }
-        }
-
-        if (jobTitle) {
-            if(jobT){
-                jobT.innerText = jobTitle.value;
-            }
-        }
-        if (objField) {
-            if(objT){
-                objT.innerText = objField.value;
-            }
-        }
-
-        if (weField) {
-            if(weT){
-                weT.innerText = weField.value;
-            }
-        }
-
-        if (skField) {
-            if(skillT){
-                skillT.innerText = skField.value;
-            }
-        }
-
-        if (langField) {
-            if(langT){
-                langT.innerText = langField.value;
-            }
-        }
-        if (proField) {
-            if(proT){
-                proT.innerText = proField.value;
-            }
-        }
-        
-        modal?.classList.remove("active-1")
-        
-}
-
-const printCV:()=> void= ()=>{
-    window.print()
     
-if(generatedurl)
-    generatedurl.innerText= ""
-}
-const generatedurl:HTMLElement | null = document.querySelector(".url")
-function generateShareableURL(): string {
-    const name: string | undefined = document.getElementById('nameT')?.innerText;
-    const url: URL = new URL(window.location.href);
-    url.searchParams.set('name', encodeURIComponent(name || ''));
-    if(generatedurl)
-    generatedurl.innerHTML = url.toString() 
-
-    return url.toString();
-}
-
-const closeModal : ()=>void = ()=>{
-    if(modal){
-        modal.classList.remove("active-1")
+    if(nameField){
+        nameField.innerHTML = fullName.value
     }
-}
+    if(emailField){
+        emailField.innerHTML = email.value
+    }
+    if(objField){
+        objField.innerHTML = objective.value
+    }
+    if(mobileField){
+        mobileField.innerHTML = mobile.value
+    }
+    if(linkedInField){
+        linkedInField.innerHTML = linkedIn.value
+    }
+    if(githubField){
+        githubField.innerHTML = gitHub.value
+    }
+    if(educationField){
+        const allEduItem = document.querySelectorAll(".education-item")
+        allEduItem.forEach(eduItem =>{
+            const lieduField = document.createElement("li")
+            const h2eduField = document.createElement("h3")
+            const degree = eduItem.querySelector(".degree") as HTMLInputElement
+const institution = eduItem.querySelector(".institution") as HTMLInputElement
+const graduation = eduItem.querySelector(".grad-year") as HTMLInputElement
+            if(h2eduField && degree){
+                h2eduField.textContent = degree.value
+            }
+            const h4eduField = document.createElement("h4")
+            if(h4eduField && institution){
+                h4eduField.textContent = institution.value
+            }
+            const h6eduField = document.createElement("h5")
+            if(h6eduField && graduation){
+                h6eduField.textContent = graduation.value
+            }
+            lieduField.appendChild(h2eduField)
+            lieduField.appendChild(h4eduField)
+            lieduField.appendChild(h6eduField)
+            educationField.appendChild(lieduField)    
+        })
+    }
+    if(projectField){
+        const allprojectItems = document.querySelectorAll(".project-item")
+        allprojectItems.forEach(projectItem=>{
+            const liproField = document.createElement("li")
+            const h1proField = document.createElement("h1")
+            const projectName = projectItem.querySelector(".project-name") as HTMLInputElement
+            const projectDesc = projectItem.querySelector(".project-description") as HTMLInputElement
+            if(h1proField && projectName){
+                h1proField.textContent = projectName.value
+            }
+            const pproField = document.createElement("p")
+            if(pproField && projectDesc){
+                pproField.textContent = projectDesc.value
+            }
+            liproField.appendChild(h1proField)
+            liproField.appendChild(pproField)
+            projectField.appendChild(liproField) 
+        })
+
+        
+    }
+    
+    if(skills){
+        const allSkills = document.querySelectorAll(".skill") as NodeListOf<HTMLInputElement>;
+    
+    allSkills.forEach(skillField => {
+        const liskillField = document.createElement("li");
+        const h3skillField = document.createElement("h3");
+        if (skillField.value) {
+            h3skillField.textContent = skillField.value;
+        }
+        liskillField.appendChild(h3skillField);
+        skills.appendChild(liskillField);
+    });
+    }
+    
+})
+
+
+
+
+
+let currentStep = 0;
+
+// Show the first step initially
+steps[currentStep].classList.add("active");
+
+nextButtons.forEach((button, index) => {
+    button.addEventListener("click", () => {
+        steps[currentStep].classList.remove("active");
+        currentStep++;
+        steps[currentStep].classList.add("active");
+    });
+});
+
+prevButtons.forEach((button, index) => {
+    button.addEventListener("click", () => {
+        steps[currentStep].classList.remove("active");
+        currentStep--;
+        steps[currentStep].classList.add("active");
+    });
+});
+
+// Add new Education section
+addEducationButton.addEventListener("click", () => {
+    const educationSection = document.getElementById("education-section") as HTMLElement;
+    const newEducation = document.createElement("div");
+    newEducation.classList.add("education-item");
+    newEducation.innerHTML = `
+        <label for="degree">Degree:</label>
+        <input type="text" class="degree" required>
+
+        <label for="institution">Institution:</label>
+        <input type="text" class="institution" required>
+
+        <label for="grad-year">Graduation Year:</label>
+        <input type="text" class="grad-year" required>
+    `;
+    educationSection.appendChild(newEducation);
+});
+
+// Add new Skill input field
+addSkillButton.addEventListener("click", () => {
+    const skillsSection = document.getElementById("skills-section") as HTMLElement;
+    const newSkill = document.createElement("input");
+    newSkill.type = "text";
+    newSkill.classList.add("skill");
+    newSkill.required = true;
+    skillsSection.appendChild(newSkill);
+});
+
+// Add new Project section
+addProjectButton.addEventListener("click", () => {
+    const projectsSection = document.getElementById("projects-section") as HTMLElement;
+    const newProject = document.createElement("div");
+    newProject.classList.add("project-item");
+    newProject.innerHTML = `
+        <label for="project">Project Name:</label>
+        <input type="text" class="project-name" required>
+
+        <label for="description">Project Description:</label>
+        <textarea class="project-description" required></textarea>
+    `;
+    projectsSection.appendChild(newProject);
+});
+
+const form = document.getElementById("multiStepForm") as HTMLFormElement;
+
+form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    alert("Form submitted successfully!");
+    form.reset();
+    currentStep = 0;
+    steps.forEach(step => step.classList.remove("active"));
+    steps[currentStep].classList.add("active");
+});
+
+
+download?.addEventListener("click", ()=>{
+    window.print()
+})
