@@ -26,6 +26,24 @@ var resumeForm = document.querySelector(".resume-form");
 var resume = document.querySelector(".resume");
 var downBtn = document.querySelector(".down-btn");
 var edit = document.querySelector(".edit");
+var profileImageInput = document.getElementById('profileImage');
+var profileImagePreview = document.getElementById('profileImagePreview');
+var objF = document.querySelector(".objF");
+var projectF = document.querySelector(".projectF");
+var skillF = document.querySelector(".skills");
+var educationF = document.querySelector(".education");
+var phoneIcon = document.querySelector(".phone-icon");
+var emailIcon = document.querySelector(".email-icon");
+var linkedInIcon = document.querySelector(".linkedIn-icon");
+var githubIcon = document.querySelector(".github-icon");
+profileImageInput.addEventListener('change', function () {
+    var _a;
+    var file = (_a = profileImageInput.files) === null || _a === void 0 ? void 0 : _a[0];
+    if (file) {
+        var imageURL = URL.createObjectURL(file);
+        profileImagePreview.src = imageURL;
+    }
+});
 edit === null || edit === void 0 ? void 0 : edit.addEventListener("click", function () {
     resumeForm.style.display = "block";
     resume.style.display = "none";
@@ -42,22 +60,37 @@ saveBtn === null || saveBtn === void 0 ? void 0 : saveBtn.addEventListener("clic
     if (emailField) {
         emailField.innerHTML = "";
         emailField.innerHTML = email.value;
+        if (email.value === "") {
+            emailIcon.style.display = "none";
+        }
     }
     if (objField) {
         objField.innerHTML = "";
         objField.innerHTML = objective.value;
+        if (objective.value === "") {
+            objF.style.display = "none";
+        }
     }
     if (mobileField) {
         mobileField.innerHTML = "";
         mobileField.innerHTML = mobile.value;
+        if (mobile.value === "") {
+            phoneIcon.style.display = "none";
+        }
     }
     if (linkedInField) {
         linkedInField.innerHTML = "";
         linkedInField.innerHTML = linkedIn.value;
+        if (linkedIn.value === "") {
+            linkedInIcon.style.display = "none";
+        }
     }
     if (githubField) {
         githubField.innerHTML = "";
         githubField.innerHTML = gitHub.value;
+        if (gitHub.value === "") {
+            githubIcon.style.display = "none";
+        }
     }
     if (educationField) {
         educationField.innerHTML = "";
@@ -79,11 +112,20 @@ saveBtn === null || saveBtn === void 0 ? void 0 : saveBtn.addEventListener("clic
             if (h6eduField && graduation) {
                 h6eduField.textContent = graduation.value;
             }
+            if (degree.value === "" && institution.value === "" && graduation.value === "") {
+                educationF.style.display = "none";
+            }
             lieduField.appendChild(h2eduField);
             lieduField.appendChild(h4eduField);
             lieduField.appendChild(h6eduField);
             educationField.appendChild(lieduField);
         });
+        if (educationField.querySelectorAll("li").length === 0) {
+            educationF.style.display = "none";
+        }
+        else {
+            educationF.style.display = "block";
+        }
     }
     if (projectField) {
         projectField.innerHTML = "";
@@ -104,6 +146,12 @@ saveBtn === null || saveBtn === void 0 ? void 0 : saveBtn.addEventListener("clic
             liproField.appendChild(pproField);
             projectField.appendChild(liproField);
         });
+        if (projectField.querySelectorAll("li").length === 0) {
+            projectF.style.display = "none";
+        }
+        else {
+            projectF.style.display = "block";
+        }
     }
     if (skills) {
         skills.innerHTML = "";
@@ -117,6 +165,12 @@ saveBtn === null || saveBtn === void 0 ? void 0 : saveBtn.addEventListener("clic
             liskillField.appendChild(h3skillField);
             skills.appendChild(liskillField);
         });
+        if (skills.querySelectorAll("li").length === 0) {
+            skillF.style.display = "none";
+        }
+        else {
+            skillF.style.display = "block";
+        }
     }
 });
 var currentStep = 0;

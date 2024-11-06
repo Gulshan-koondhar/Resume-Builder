@@ -26,6 +26,26 @@ const resumeForm = document.querySelector(".resume-form") as HTMLDivElement
 const resume = document.querySelector(".resume") as HTMLDivElement
 const downBtn = document.querySelector(".down-btn") as HTMLDivElement
 const edit = document.querySelector(".edit") 
+const profileImageInput = document.getElementById('profileImage') as HTMLInputElement;
+const profileImagePreview = document.getElementById('profileImagePreview') as HTMLImageElement;
+const objF = document.querySelector(".objF") as HTMLDivElement
+const projectF = document.querySelector(".projectF") as HTMLDivElement
+const skillF = document.querySelector(".skills") as HTMLDivElement
+const educationF = document.querySelector(".education") as HTMLDivElement
+const phoneIcon = document.querySelector(".phone-icon") as HTMLSpanElement
+const emailIcon = document.querySelector(".email-icon") as HTMLSpanElement
+const linkedInIcon = document.querySelector(".linkedIn-icon") as HTMLSpanElement
+const githubIcon = document.querySelector(".github-icon") as HTMLSpanElement
+
+
+profileImageInput.addEventListener('change', function () {
+    const file = profileImageInput.files?.[0];
+
+    if (file) {
+      const imageURL = URL.createObjectURL(file);
+      profileImagePreview.src = imageURL;
+    }
+  });
 
 
 edit?.addEventListener("click", ()=>{
@@ -46,22 +66,39 @@ saveBtn?.addEventListener("click", ()=>{
     if(emailField){
         emailField.innerHTML = ""
         emailField.innerHTML = email.value
+        if(email.value === ""){
+            emailIcon.style.display = "none"
+        }
+       
     }
     if(objField){
+
         objField.innerHTML = ""
         objField.innerHTML = objective.value
+        if(objective.value === ""){
+            objF.style.display = "none"
+        }
     }
     if(mobileField){
         mobileField.innerHTML = ""
         mobileField.innerHTML = mobile.value
+        if(mobile.value === ""){
+            phoneIcon.style.display = "none"
+        }
     }
     if(linkedInField){
         linkedInField.innerHTML = ""
         linkedInField.innerHTML = linkedIn.value
+        if(linkedIn.value === ""){
+            linkedInIcon.style.display = "none"
+        }
     }
     if(githubField){
         githubField.innerHTML = ""
         githubField.innerHTML = gitHub.value
+        if(gitHub.value === ""){
+            githubIcon.style.display = "none"
+        }
     }
     if(educationField){
         educationField.innerHTML = ""
@@ -83,14 +120,23 @@ saveBtn?.addEventListener("click", ()=>{
             if(h6eduField && graduation){
                 h6eduField.textContent = graduation.value
             }
+            if(degree.value === "" && institution.value === "" && graduation.value === ""){
+                educationF.style.display = "none"
+            }
             lieduField.appendChild(h2eduField)
             lieduField.appendChild(h4eduField)
             lieduField.appendChild(h6eduField)
             educationField.appendChild(lieduField)    
         })
+        if (educationField.querySelectorAll("li").length === 0){
+            educationF.style.display = "none"
+        }else{
+            educationF.style.display = "block"
+        }
     }
     if(projectField){
-        projectField.innerHTML = ""
+
+                projectField.innerHTML = ""
         const allprojectItems = document.querySelectorAll(".project-item")
         allprojectItems.forEach(projectItem=>{
             const liproField = document.createElement("li")
@@ -107,9 +153,14 @@ saveBtn?.addEventListener("click", ()=>{
             liproField.appendChild(h1proField)
             liproField.appendChild(pproField)
             projectField.appendChild(liproField) 
+            
+            
         })
-
-        
+        if (projectField.querySelectorAll("li").length === 0) {
+            projectF.style.display = "none";
+        } else {
+            projectF.style.display = "block";
+        }
     }
     
     if(skills){
@@ -122,9 +173,15 @@ saveBtn?.addEventListener("click", ()=>{
         if (skillField.value) {
             h3skillField.textContent = skillField.value;
         }
+        
         liskillField.appendChild(h3skillField);
         skills.appendChild(liskillField);
     });
+    if (skills.querySelectorAll("li").length === 0) {
+        skillF.style.display = "none";
+    } else {
+        skillF.style.display = "block";
+    }
     }
     
 })
